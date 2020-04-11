@@ -2,11 +2,11 @@
   <div class="shop-list__layout">
     <div
       class="shop-list__body"
-      v-for="item in items"
-      :key="item.message"
+      v-for="(item, index) in items"
+      :key="index"
       :class="`shop-list__item`"
     >
-      <div v-on:click="() => removeItem(item.message)">
+      <div v-on:click="() => removeItem(index)">
         {{ item.message }}
       </div>
     </div>
@@ -19,15 +19,14 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component
 export default class ShopList extends Vue {
   @Prop() private items!: { message: string };
-  @Prop() private removeItem!: (value: string) => void;
+  @Prop() private removeItem!: (index: number) => void;
 }
 </script>
 
 <style scoped>
 .shop-list__layout {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-  width: 40%;
-  margin: 50px auto;
+  margin-top: 50px;
 }
 
 .shop-list__item {

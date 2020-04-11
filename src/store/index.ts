@@ -11,8 +11,8 @@ export default new Vuex.Store({
     addItem(state, value: string) {
       state.items.push({ message: value });
     },
-    removeItem(state, value: string) {
-      state.items = state.items.filter((item) => item.message != value);
+    removeItem(state, index: number) {
+      state.items = state.items.filter((item, i) => i !== index);
     }
   },
   actions: {

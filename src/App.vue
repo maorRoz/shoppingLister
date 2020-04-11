@@ -15,10 +15,12 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  max-width: 1012px;
+  margin: 0 auto;
 }
 
 #nav {
-  padding: 30px;
+  padding: 30px 0;
 }
 
 #nav a {

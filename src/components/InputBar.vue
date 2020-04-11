@@ -26,15 +26,14 @@ export default class InputBar extends Vue {
 
 <style scoped>
 .input-bar {
-  width: 40%;
   overflow: hidden;
-  margin: 20px auto;
+  margin-top: 20px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
 
 .input-bar input {
   width: 100%;
-  font-size: 25px;
+  font-size: 2em;
   outline: none;
 }
 </style>

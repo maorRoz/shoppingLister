@@ -19,8 +19,8 @@ export default class ShopListForm extends Vue {
   addItem(value: string) {
     this.$store.dispatch('addItem', value);
   }
-  removeItem(value: string) {
-    this.$store.dispatch('removeItem', value);
+  removeItem(index: number) {
+    this.$store.dispatch('removeItem', index);
   }
 }
 </script>
