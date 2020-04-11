@@ -5,15 +5,13 @@
       v-model="value"
       v-on:keyup.enter="submit"
     />
-    <Moshe />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import Moshe from '@/components/Moshe.vue';
 
-@Component({ components: { Moshe } })
+@Component
 export default class InputBar extends Vue {
   @Prop() private addItem!: (value: string) => void;
 

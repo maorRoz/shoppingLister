@@ -12,13 +12,15 @@ import ShopList from '@/components/ShopList.vue';
 
 @Component({ components: { InputBar, ShopList } })
 export default class ShopListForm extends Vue {
-  private items: { message: string }[] = [];
+  get items(): { message: string }[] {
+    return this.$store.state.items;
+  }
 
   addItem(value: string) {
-    this.items.push({ message: value });
+    this.$store.dispatch('addItem', value);
   }
   removeItem(value: string) {
-    this.items = this.items.filter((item) => item.message !== value);
+    this.$store.dispatch('removeItem', value);
   }
 }
 </script>
